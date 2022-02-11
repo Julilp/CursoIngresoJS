@@ -6,9 +6,97 @@ C.	Si compra 4  lamparitas bajo consumo marca "ArgentinaLuz" o “FelipeLamparas
 D.	Si compra 3  lamparitas bajo consumo marca "ArgentinaLuz"  el descuento es del 15%, si es  “FelipeLamparas” se hace un descuento del 10 % y si es de otra marca un 5%.
 E.	Si el importe final con descuento suma más de $120  se debe sumar un 10% de ingresos brutos en informar del impuesto con el siguiente mensaje:
  ”Usted pago X de IIBB.”, siendo X el impuesto que se pagó. 
-
+ Julian lopez tp 4
  */
 function CalcularPrecio () 
 {
- 	
+    let marcaDeLampara;
+    let precioDeLamparas;
+    let cantidadDeLamparas;
+    let precioFinal;
+    let porcentajeDeDescuento;
+    let impuesto;
+    let porcentajeBruto
+
+
+    porcentajeBruto = 10;
+    cantidadDeLamparas=parseInt(document.getElementById('txtIdCantidad').value);
+    marcaDeLampara=document.getElementById('Marca').value;
+    precioDeLamparas = 35;
+    
+    //-- inicio del problema A--//
+    if (cantidadDeLamparas > 5)
+     {
+        porcentajeDeDescuento = 50;
+    //-- Fin del problema A--//
+
+    //-- inicio del problema B--//
+     }
+     else 
+     {
+        if (cantidadDeLamparas == 5)
+         {
+            if (marcaDeLampara == "ArgentinaLuz")
+             {  
+                porcentajeDeDescuento = 40;
+             }
+            else
+             {
+                porcentajeDeDescuento = 30;
+             }
+    //-- Fin del problema B--//
+          }
+        else
+        {
+    //-- inicio del problema C--//
+            if (cantidadDeLamparas == 4)
+            {
+                if (marcaDeLampara == "ArgentinaLuz" || marcaDeLampara == "FelipeLamparas")
+                 {
+                    porcentajeDeDescuento = 25;
+                 } 
+                 else
+                  {
+                    porcentajeDeDescuento = 20;
+                  }
+    //-- Fin del problema C--//
+            }
+    //-- inicio del problema D--//
+            else
+            {
+                if (cantidadDeLamparas == 3) 
+                {
+                   if (marcaDeLampara == "ArgentinaLuz")
+                    {
+                        porcentajeDeDescuento = 15;
+                    } 
+                    else
+                    {
+                        if (marcaDeLampara == "FelipeLamparas")
+                         {
+                            porcentajeDeDescuento = 10;
+                         } 
+                         else 
+                         {
+                            porcentajeDeDescuento = 5;
+                         }
+                    }
+    //-- Fin del problema D--//
+                }                   
+            }
+
+        }
+     }
+
+    porcentajeDeDescuento = precioDeLamparas * porcentajeDeDescuento / 100;
+    precioFinal=cantidadDeLamparas * (precioDeLamparas - porcentajeDeDescuento);  
+        //-- inicio del problema E--//
+     if (precioFinal >120)
+     {
+        impuesto = precioFinal * porcentajeBruto / 100;
+        precioFinal = precioFinal + impuesto;
+        alert("IIBB Usted pago "  + impuesto + " de impuestos")
+     } 
+            //-- Final del problema E--//*/
+    document.getElementById('txtIdprecioDescuento').value=precioFinal;   
 }
