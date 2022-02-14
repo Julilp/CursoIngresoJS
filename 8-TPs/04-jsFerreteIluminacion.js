@@ -40,7 +40,7 @@ function CalcularPrecio ()
              {  
                 porcentajeDeDescuento = 40;
              }
-            else
+             else
              {
                 porcentajeDeDescuento = 30;
              }

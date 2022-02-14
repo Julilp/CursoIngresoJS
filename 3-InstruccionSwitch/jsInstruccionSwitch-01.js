@@ -1,9 +1,30 @@
+/*
+julian lopez switch 01
+*/
 function mostrar()
 {
 	//tomo el mes
-	var mesDelAño =txtIdMes.value;
-	alert(mesDelAño);
+	let mesDelAño
+	let mensaje;
 
+	mesDelAño=document.getElementById('txtIdMes').value;
 
+	switch(mesDelAño)
+	{
+		case "Enero":
+			mensaje = "que comiences bien el año!!!.";
+		break;
+		
+		case "Marzo":
+			mensaje = "a clases";
+		case "Julio":
+			mensaje = "se vienen las vacaciones!!!";
+		break;
+		case "Diciembre":
+			mensaje = "Felices fiesta";
+		break;
+	}
 
-}//FIN DE LA FUNCIÓN
+	alert(mensaje);
+}
+//FIN DE LA FUNCIÓN
