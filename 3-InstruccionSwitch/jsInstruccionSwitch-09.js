@@ -48,7 +48,7 @@ function mostrar()
 			}
 		break;
 
-		case "Catarata":
+		case "Cataratas":
 			switch(estacionIngresada)
 			{
 				case "Verano":
