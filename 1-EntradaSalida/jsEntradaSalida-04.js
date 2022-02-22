@@ -6,7 +6,8 @@ function mostrar()
 {
 	let nombreIngresado;
 	nombreIngresado=prompt("ingresa tu nombre");
-	document.getElementById('txtIdNombre').value="su nombre es "+nombreIngresado;
+	//document.getElementById('txtIdNombre').value="su nombre es "+nombreIngresado;
+	document.write=nombreIngresado;
 }
 	
 	/* 

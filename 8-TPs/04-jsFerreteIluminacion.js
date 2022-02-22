@@ -23,6 +23,117 @@ function CalcularPrecio ()
     marcaDeLampara=document.getElementById('Marca').value;
     precioDeLamparas = 35;
 
+    switch(marcaDeLampara)
+    {
+        case "ArgentinaLuz":
+            switch(cantidadDeLamparas)
+            {
+                case 1:
+                case 2:
+                    porcentajeDeDescuento = 0;
+                break;
+
+                case 3:
+                    porcentajeDeDescuento = 15;
+                break;
+
+                case 4:
+                    porcentajeDeDescuento = 25;
+                break;
+
+                case 5:
+                    porcentajeDeDescuento = 40;
+                break;
+
+                default:
+                    porcentajeDeDescuento = 50;
+                break;
+            }
+        break;
+
+        case "FelipeLamparas":
+              switch(cantidadDeLamparas)
+            {
+                case 1:
+                case 2:
+                    porcentajeDeDescuento = 0;
+                break;
+
+                case 3:
+                    porcentajeDeDescuento = 10;
+                break;
+
+                case 4:
+                    porcentajeDeDescuento = 25;
+                break;
+
+                case 5:
+                    porcentajeDeDescuento = 30;
+                break;
+
+                default:
+                    porcentajeDeDescuento = 50;
+                break;
+            }
+        break;
+
+        default:
+            switch(cantidadDeLamparas)
+            {
+                case 1:
+                case 2:
+                    porcentajeDeDescuento = 0;
+                break;
+
+                case 3:
+                    porcentajeDeDescuento = 5;
+                break;
+
+                case 4:
+                    porcentajeDeDescuento = 20;
+                break;
+
+                case 5:
+                    porcentajeDeDescuento = 30;
+                break;
+                
+                 default:
+                    porcentajeDeDescuento = 50;
+                break;
+            }
+        break;
+    }
+
+    porcentajeDeDescuento = precioDeLamparas * porcentajeDeDescuento / 100;
+    precioFinal=cantidadDeLamparas * (precioDeLamparas - porcentajeDeDescuento);  
+
+    if (precioFinal >120) //Ejercicio E
+     {
+        impuesto = precioFinal * porcentajeBruto / 100;
+        precioFinal = precioFinal + impuesto;
+        alert("IIBB Usted pago "  + impuesto + " de impuestos")
+     }
+    document.getElementById('txtIdprecioDescuento').value=precioFinal; 
+
+}
+
+
+
+/*
+    // IF SWITCH
+    let cantidadDeLamparas;
+    let marcaDeLampara;
+    let precioDeLamparas;
+    let porcentajeDeDescuento;
+    let precioFinal;
+    let impuesto;
+    let porcentajeBruto;
+
+    porcentajeBruto=10;
+    cantidadDeLamparas=parseInt(document.getElementById('txtIdCantidad').value);
+    marcaDeLampara=document.getElementById('Marca').value;
+    precioDeLamparas = 35;
+
     if (cantidadDeLamparas > 5)
      {
         porcentajeDeDescuento = 50;
@@ -78,6 +189,10 @@ function CalcularPrecio ()
                     }
                  }               
              }
+             if (cantidadDeLamparas < 3)
+              {
+                porcentajeDeDescuento = 0;
+              }
           }
       }
 
@@ -91,122 +206,13 @@ function CalcularPrecio ()
         alert("IIBB Usted pago "  + impuesto + " de impuestos")
      }
     document.getElementById('txtIdprecioDescuento').value=precioFinal;
-}
+*/
 
 
 
 
 
-
-
-
-
-
-  /*                SWITCH SWITCH
-    let cantidadDeLamparas;
-    let marcaDeLampara;
-    let precioDeLamparas;
-    let porcentajeDeDescuento;
-    let precioFinal;
-    let impuesto;
-    let porcentajeBruto;
-
-    porcentajeBruto=10;
-    cantidadDeLamparas=parseInt(document.getElementById('txtIdCantidad').value);
-    marcaDeLampara=document.getElementById('Marca').value;
-    precioDeLamparas = 35;
-
-    switch(marcaDeLampara)
-    {
-        case "ArgentinaLuz":
-            switch(cantidadDeLamparas)
-            {
-                case 1:
-                case 2:
-                    porcentajeDeDescuento = 0;
-                break;
-
-                case 3:
-                    porcentajeDeDescuento = 15;
-                break;
-
-                case 4:
-                    porcentajeDeDescuento = 25;
-                break;
-
-                case 5:
-                    porcentajeDeDescuento = 40;
-                break;
-
-                defaul:
-                    porcentajeDeDescuento = 50;
-                break;
-            }
-        break;
-
-        case "FelipeLamparas":
-              switch(cantidadDeLamparas)
-            {
-                case 1:
-                case 2:
-                    porcentajeDeDescuento = 0;
-                break;
-
-                case 3:
-                    porcentajeDeDescuento = 10;
-                break;
-
-                case 4:
-                    porcentajeDeDescuento = 25;
-                break;
-
-                case 5:
-                    porcentajeDeDescuento = 30;
-                break;
-
-                defaul:
-                    porcentajeDeDescuento = 50;
-                break;
-            }
-        break;
-
-        default:
-            switch(cantidadDeLamparas)
-            {
-                case 1:
-                case 2:
-                    porcentajeDeDescuento = 0;
-                break;
-
-                case 3:
-                    porcentajeDeDescuento = 5;
-                break;
-
-                case 4:
-                    porcentajeDeDescuento = 20;
-                break;
-
-                case 5:
-                    porcentajeDeDescuento = 30;
-                break;
-                
-                 defaul:
-                    porcentajeDeDescuento = 50;
-                break;
-            }
-        break;
-    }
-
-    porcentajeDeDescuento = precioDeLamparas * porcentajeDeDescuento / 100;
-    precioFinal=cantidadDeLamparas * (precioDeLamparas - porcentajeDeDescuento);  
-
-    if (precioFinal >120) //Ejercicio E
-     {
-        impuesto = precioFinal * porcentajeBruto / 100;
-        precioFinal = precioFinal + impuesto;
-        alert("IIBB Usted pago "  + impuesto + " de impuestos")
-     }
-    document.getElementById('txtIdprecioDescuento').value=precioFinal; */
+  
 
 
   /*            SWITCH IF
